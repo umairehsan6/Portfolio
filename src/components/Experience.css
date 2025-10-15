@@ -1,0 +1,276 @@
+.experience {
+  padding: 4rem 0;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.experience .container {
+  position: relative;
+  z-index: 2;
+}
+
+.experience-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-description {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--gradient-primary);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  width: 50%;
+}
+
+.timeline-item.left {
+  left: 0;
+  padding-right: 3rem;
+}
+
+.timeline-item.right {
+  left: 50%;
+  padding-left: 3rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+  z-index: 2;
+}
+
+.timeline-item.left .timeline-marker {
+  right: -30px;
+}
+
+.timeline-item.right .timeline-marker {
+  left: -30px;
+}
+
+.timeline-content {
+  position: relative;
+}
+
+.experience-card {
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Different background colors based on position type */
+.experience-card.internship-card {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
+  border-left: 4px solid rgba(99, 102, 241, 0.6);
+}
+
+.experience-card.freelance-card {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 140, 60, 0.05) 100%);
+  border-left: 4px solid rgba(255, 107, 53, 0.6);
+}
+
+.experience-card.education-card {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(52, 211, 153, 0.05) 100%);
+  border-left: 4px solid rgba(34, 197, 94, 0.6);
+}
+
+.experience-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.experience-card:hover::before {
+  transform: scaleX(1);
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Marker colors based on type */
+.timeline-item.internship .timeline-marker {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.9), rgba(139, 92, 246, 0.9));
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+}
+
+.timeline-item.freelance .timeline-marker {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.9), rgba(255, 140, 60, 0.9));
+  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
+}
+
+.timeline-item.education .timeline-marker {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.9), rgba(52, 211, 153, 0.9));
+  box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4);
+}
+
+.card-header {
+  margin-bottom: 1.5rem;
+}
+
+.job-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.company-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.job-meta {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.job-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.job-meta svg {
+  font-size: 0.8rem;
+  color: var(--primary);
+}
+
+.job-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .experience {
+    padding: 4rem 0;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .timeline::before {
+    left: 30px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    left: 0 !important;
+    padding-left: 4rem !important;
+    padding-right: 0 !important;
+  }
+  
+  .timeline-marker {
+    left: 0 !important;
+    right: auto !important;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .experience-card {
+    padding: 1.5rem;
+  }
+  
+  .job-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .timeline-item {
+    padding-left: 3rem !important;
+  }
+  
+  .timeline-marker {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .experience-card {
+    padding: 1.25rem;
+  }
+  
+  .job-title {
+    font-size: 1.3rem;
+  }
+  
+  .company-name {
+    font-size: 1.1rem;
+  }
+}
