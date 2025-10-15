@@ -77,3 +77,4 @@ const DigitCounter = ({
 }
 
 export default DigitCounter
+
